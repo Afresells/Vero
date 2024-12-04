@@ -1,0 +1,38 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const products = [
+    {
+      name: 'Luxury Watch',
+      description: 'A timeless piece of elegance.',
+      price: '$1999',
+      img: 'watch.jpg'
+    },
+    {
+      name: 'Designer Sneakers',
+      description: 'Comfort meets style.',
+      price: '$499',
+      img: 'sneakers.jpg'
+    },
+    {
+      name: 'Exclusive Fragrance',
+      description: 'A scent for the future.',
+      price: '$299',
+      img: 'fragrance.jpg'
+    }
+  ];
+
+  const productGrid = document.querySelector('.product-grid');
+
+  products.forEach(product => {
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+
+    productCard.innerHTML = `
+      <img src="${product.img}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <div class="price">${product.price}</div>
+    `;
+
+    productGrid.appendChild(productCard);
+  });
+});
